@@ -71,7 +71,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            pm2 restart test_server
+            /usr/local/bin/pm2 restart test_server  # <-- Use full path here!
 
       - name: Check PM2 logs
         uses: appleboy/ssh-action@v1.0.0
@@ -81,7 +81,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            pm2 logs
+            /usr/local/bin/pm2 logs test_server  # <-- Use full path here!
 
       - name: Check PM2 status
         uses: appleboy/ssh-action@v1.0.0
@@ -91,7 +91,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            pm2 status
+            /usr/local/bin/pm2 status test_server  # <-- Use full path here!
 
       - name: Check if the server is running
         uses: appleboy/ssh-action@v1.0.0
