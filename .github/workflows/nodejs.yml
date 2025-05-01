@@ -60,6 +60,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
+            cd ~/CI-CD-Integration-IN-NodeJS
             npm install
 
       - name: Restart the PM2 process
