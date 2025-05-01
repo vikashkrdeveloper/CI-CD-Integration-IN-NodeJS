@@ -11,4 +11,12 @@ app.get('/', (req, res) => {
   res.send('Hello CI/CD World!');
 });
 
+// New /data route added
+app.get('/data', (req, res) => {
+  res.json({
+    message: "dummy message",
+    data: ["dummy data"]
+  });
+});
+
 module.exports = app;

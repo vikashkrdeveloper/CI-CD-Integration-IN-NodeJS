@@ -17,6 +17,16 @@ describe('GET /home', () => {
   });
 });
 
+// Test for /data route
+describe('GET /data', () => {
+  it('responds with dummy message and data', async () => {
+    const res = await request(app).get('/data');
+    expect(res.statusCode).toBe(200);
+    expect(res.body.message).toBe('dummy message');
+    expect(res.body.data).toEqual(['dummy data']);
+  });
+});
+
 // Test for a non-existent route
 describe('GET /nonexistent', () => {
   it('responds with 404 Not Found', async () => {
