@@ -2,45 +2,60 @@ name: Node.js CI/CD
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [master, main]
   pull_request:
-    branches: [ master, main ]
+    branches: [master, main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run Tests
-      run: npm test
+      - name: Run Tests
+        run: npm test
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy to Server 🌐
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        host: ${{ secrets.SERVER_IP }}
-        username: ${{ secrets.SERVER_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22
-        script: |
-          cd ~/CI-CD-Integration-IN-NodeJS
-          git pull origin master
-          npm install
-          pm2 restart test_server
+      - name: Deploy to Server 🌐
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            # Step 1: Install Node.js via nvm (if not installed)
+            curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+            sudo apt-get install -y nodejs
 
-    - name: Deploy to Server (Simulation)
-      run: echo "Pretend we're deploying the app now!" 
+            # Step 2: Navigate to project directory and pull the latest changes
+            cd ~/CI-CD-Integration-IN-NodeJS
+            git pull origin master
+
+            # Step 3: Install dependencies with updated Node.js
+            npm install
+
+            # Step 4: Restart the PM2 process
+            pm2 restart test_server
+
+            # Step 5: Check PM2 logs
+            pm2 logs
+
+            # Step 6: Check PM2 status
+            pm2 status
+
+            # Step 7: Check if the server is running
+            curl -I http://localhost:3000
