@@ -29,8 +29,18 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - name: Deploy to Server 🌐
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.SERVER_IP }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+          cd ~/CI-CD-Integration-IN-NodeJS
+          git pull origin master
+          npm install
+          pm2 restart test_server
 
     - name: Deploy to Server (Simulation)
       run: echo "Pretend we're deploying the app now!" 
