@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 app.get('/data', (req, res) => {
   res.json({
     message: "dummy message",
-    data: ["dummy data"]
+    data: ["dummy data HIRALAL BHAI"]
   });
 });
 
