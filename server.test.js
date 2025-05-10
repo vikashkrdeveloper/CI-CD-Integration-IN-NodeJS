@@ -23,7 +23,7 @@ describe('GET /data', () => {
     const res = await request(app).get('/data');
     expect(res.statusCode).toBe(200);
     expect(res.body.message).toBe('dummy message');
-    expect(res.body.data).toEqual(['dummy data']);
+    expect(res.body.data).toEqual(['dummy data HIRALAL BHAI']);
   });
 });
 
