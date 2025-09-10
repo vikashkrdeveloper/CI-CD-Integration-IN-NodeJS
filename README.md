@@ -133,11 +133,11 @@ Add any relevant screenshots here! 📸 (Optional)
 - **Email**: [Vik.fstkdvpro@gmail.com](mailto:vik.fstkdvpro@gmail.com)
 - **LinkedIn**: [Vikash Kumar](https://www.linkedin.com/in/vikashkrdeveloper/)
 - **GitHub**: [Vikash Kumar](https://www.github.com/vikashkrdeveloper)
-- **Twitter**: [@vikashkrdeveloper](https://twitter.com/vikashkrdeveloper)
+- **Twitter**: [@vikashkrdeveloper](https://twitter.com/vikashfolio)
 - **Instagram**: [@vikashkrdeveloper](https://www.instagram.com/vikashkrdeveloper/)
 - **Portfolio**: [vikashkrdeveloper](https://vikashkrdeveloper.vercel.app/)
 - **Telegram**: [@vikashkrdeveloper](https://t.me/vikashkrdeveloper)
-- **YouTube**: [Vikash Kumar](https://www.youtube.com/@vikashkrdeveloper)
+- **YouTube**: [Vikash Kumar](https://www.youtube.com/@debugyatra)
 
 ## 📝 Author
 
