@@ -6,7 +6,7 @@ We will also learn how to deploy our Node.js application on a VPS server or AWS 
 This is a **step-by-step guide** designed for learning and practicing **CI/CD integration** in real-world Node.js projects using GitHub Actions and remote servers.  
 I created this repository as part of my learning journey, so feel free to explore and adapt it for your own CI/CD needs.
 
-## 📚 Prerequisites    
+## 📚 Prerequisites
 
 Make sure you know the basics of:
 
