@@ -8,7 +8,7 @@ I created this repository as part of my learning journey, so feel free to explor
 
 ## 📚 Prerequisites
 
-Make sure you know the basics of:    
+Make sure you know the basics of:
 
 - **Node.js** & **Express.js**
 - **Git** & **GitHub**
