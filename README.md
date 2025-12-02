@@ -119,12 +119,6 @@ This project is licensed under the **MIT License** — you are free to use and m
 
 ---
 
-## 📸 Screenshots
-
-Add any relevant screenshots here! 📸 (Optional)
-
----
-
 ## 📞 Contact
 
 - **Name**: Vikash Kumar
